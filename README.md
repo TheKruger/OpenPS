@@ -19,7 +19,7 @@ python3 setup.py build
 .
 ├─── plugins
 │    └─── hello.py
-└─── main_prgram.py
+└─── main_program.py
 ```
 
 You need to add a `plugin.py` file.
@@ -27,7 +27,7 @@ You need to add a `plugin.py` file.
 .
 ├─── plugins
 │    └─── hello.py
-├─── main_prgram.py
+├─── main_program.py
 └─── plugin.py
 ```
 Write the following code to the `plugin.py`
@@ -62,7 +62,7 @@ event.init()
 ```
 
 ```py
-# main.py
+# main_program.py
 import plugin
 
 def main():
@@ -81,7 +81,7 @@ def function():
   print("hello from the plugin!")
 ```
 
-When you run the `main.py` the output should be looks like this
+When you run the `main_program.py` the output should be looks like this
 ```
 hello from the plugin!
 hello world!
