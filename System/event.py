@@ -1,14 +1,10 @@
 import os
-from _thread import start_new_thread
 
 class Event:
 
     def __init__(self, plugins_path):
         self.path = plugins_path
         self.events = {}
-        # self.events.update({"": []})
-        # self.events.update({"": []})
-        # self.events.update({"": []})
 
     def init(self):
         lst = os.listdir(self.path)
