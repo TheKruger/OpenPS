@@ -34,6 +34,7 @@ Write the following code to the `plugin.py`
 
 
 ```py
+# plugin.py
 import OpenPS
 
 event = OpenPS.Event("./plugins/")
@@ -47,6 +48,7 @@ event.init()
 If you want to add your own events then add this line in the code **above the `event.init()` line**.
 
 ```py
+# plugin.py
 import OpenPS
 
 event = OpenPS.Event("./plugins/")
@@ -79,7 +81,7 @@ def function():
   print("hello from the plugin!")
 ```
 
-Output
+When you run the `main.py` the output should be looks like this
 ```
 hello from the plugin!
 hello world!
