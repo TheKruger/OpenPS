@@ -9,6 +9,6 @@ setup(
    description='Open source plugin system.',
    long_description=long_description,
    author='TheKruger',
-   keywords=["python", "plugin-system"]
+   keywords=["python", "plugin-system"],
    packages=['OpenPS']
 )
