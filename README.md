@@ -13,22 +13,33 @@ Linux
 pip3 install OpenPS
 ```
 
+# Built-in events
+
+IMPORTANT: These events will not called automatically. You need to define when need to call.
+
+- OnProgamStart
+- OnProgamExit
+- OnProgamInit
+
 # How to use
+
+If you have a project and want to add a plugin system then you just need to follow these instructions.
+First you need to make the project folder.
 
 ```
 .
-├─── plugins
-│    └─── hello.py
-└─── main_program.py
+├── main_program.py
+└── plugins
+    └── hello.py
 ```
 
 You need to add a `plugin.py` file.
 ```
 .
-├─── plugins
-│    └─── hello.py
-├─── main_program.py
-└─── plugin.py
+├── main_program.py
+├── plugin.py
+└── plugins
+    └── hello.py
 ```
 Write the following code to the `plugin.py`
 
@@ -76,7 +87,7 @@ main()
 # /plugins/hello.py
 import plugin
 
-@plugin.register()
+@plugin.register("OnProgramFoo")
 def function():
   print("hello from the plugin!")
 ```
