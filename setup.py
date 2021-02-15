@@ -6,7 +6,7 @@ with codecs.open("README.md", 'r', encoding="utf-8") as f:
 
 setup(
    name='OpenPS',
-   version='0.0.1',
+   version='1.0.0',
    description='Open source plugin system.',
    long_description_content_type="text/markdown",
    long_description=long_description,
