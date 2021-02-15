@@ -5,12 +5,12 @@ Open source plugin system.
 
 Windows
 ```
-python setup.py build
+python setup.py install
 ```
 
 Linux
 ```
-python3 setup.py build
+python3 setup.py install
 ```
 
 # How to use
