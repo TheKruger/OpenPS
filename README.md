@@ -5,12 +5,12 @@ Open source plugin system.
 
 Windows
 ```
-python setup.py install
+pip install OpenPS
 ```
 
 Linux
 ```
-python3 setup.py install
+pip3 install OpenPS
 ```
 
 # How to use
