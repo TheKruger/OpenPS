@@ -1,1 +1,1 @@
-from System.event import *
+from .System.event import *
