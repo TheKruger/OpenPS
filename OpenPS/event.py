@@ -5,7 +5,7 @@ class Event:
     def __init__(self, plugins_path):
         self.path = plugins_path
         self.events = {}
-        self.events.update({"OnProgamStart": []})
+        self.events.update({"OnProgramStart": []})
         self.events.update({"OnProgramExit": []})
         self.events.update({"OnProgramInit": []})
 
