@@ -1,7 +1,8 @@
+import codecs
 from setuptools import setup
 
-with open("README.md", 'r') as f:
-    long_description = f.read()
+with codecs.open("README.md", 'r', encoding="utf-8") as f:
+    long_description = "\n" + f.read()
 
 setup(
    name='OpenPS',
