@@ -17,9 +17,9 @@ pip3 install OpenPS
 
 IMPORTANT: These events will not called automatically. You need to define when need to call.
 
-- OnProgamStart
-- OnProgamExit
-- OnProgamInit
+- OnProgramStart
+- OnProgramExit
+- OnProgramInit
 
 # How to use
 
@@ -96,4 +96,26 @@ When you run the `main_program.py` the output should be looks like this
 ```
 hello from the plugin!
 hello world!
+```
+
+# Adding custom plugin load order
+
+The default loading order is `None`. That means loads in alphabetical order.
+
+If you want to add your own order then make a new function in the `plugin.py`.
+The function required minimum 1 parameter. The return value must be a list otherwise will not working.
+```py
+# plugin.py
+import OpenPS
+
+def reverse(lst) -> list:
+  lst.sort(reverse=True)
+  return lst
+
+event = OpenPS.Event("./plugins/", reverse)
+
+call = lambda name: event.call(name)
+register = lambda name: event.register(name)
+
+event.init()
 ```
