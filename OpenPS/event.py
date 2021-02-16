@@ -1,9 +1,11 @@
 import os
 
 class Event:
+    """This class handle the call events."""
 
-    def __init__(self, plugins_path):
+    def __init__(self, plugins_path, order=None):
         self.path = plugins_path
+        self.order = order
         self.events = {}
         self.events.update({"OnProgramStart": []})
         self.events.update({"OnProgramExit": []})
@@ -12,13 +14,23 @@ class Event:
     def init(self):
         """This function initialize all plugins.
         If you have custom events then you need to call this function last."""
+        plugins = []
         lst = os.listdir(self.path)
         if "__init__.py" in lst:
             lst.remove("__init__.py")
         for file in lst:
             file = os.path.abspath(self.path + file)
             if os.path.isfile(file):
-                exec(open(file, "r").read())
+                if file.endswith(".py"):
+                    # exec(open(file, "r").read())
+                    plugins.append(file)
+        if self.order == None:
+            for plugin in plugins:
+                exec(open(plugin, "r").read())
+        else:
+            self.order(plugins)
+            for plugin in plugins:
+                exec(open(plugin, "r").read())
 
     def create(self, name):
         """Create your own event."""
